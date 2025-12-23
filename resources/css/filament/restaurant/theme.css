@@ -1,0 +1,311 @@
+/* resources/css/filament/restaurant/theme.css */
+/* ============================================
+   ДИЗАЙН-СИСТЕМА: AIS Ресторан (Filament)
+   На основе waiter-dashboard, order-menu, chef-orders
+============================================ */
+
+/* ---------- 1. ЦВЕРА ---------- */
+:root {
+  /* Основные (Primary) */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1e40af;
+  --color-primary-800: #1e3a8a;
+  --color-primary-900: #1e3a8a;
+
+  /* Статусы: Успех */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
+
+  /* Статусы: Предупреждение */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+
+  /* Статусы: Опасность */
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-200: #fecaca;
+  --color-danger-300: #fca5a5;
+  --color-danger-400: #f87171;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-danger-700: #b91c1c;
+  --color-danger-800: #991b1b;
+  --color-danger-900: #7f1d1d;
+
+  /* Нейтральные */
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-400: #94a3b8;
+  --color-gray-500: #64748b;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1e293b;
+  --color-gray-900: #0f172a;
+}
+
+/* ---------- 2. БАЗОВЫЕ СТИЛИ КОМПОНЕНТОВ ---------- */
+
+/* КАРТОЧКА (основной компонент) */
+.ais-card {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--color-primary-200);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.ais-card:hover {
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.15);
+  border-color: var(--color-primary-300);
+}
+
+.ais-card-header {
+  background: linear-gradient(135deg, var(--color-primary-700), var(--color-primary-500));
+  color: white;
+  padding: 1rem 1.5rem;
+  margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+  border-radius: 0.75rem 0.75rem 0 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* КНОПКИ */
+.ais-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  gap: 0.5rem;
+}
+
+.ais-btn:hover {
+  transform: translateY(-2px);
+}
+
+.ais-btn-primary {
+  background: linear-gradient(to right, var(--color-primary-600), var(--color-primary-500));
+  color: white;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+}
+
+.ais-btn-primary:hover {
+  background: linear-gradient(to right, var(--color-primary-700), var(--color-primary-600));
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
+.ais-btn-success {
+  background: linear-gradient(to right, var(--color-success-600), var(--color-success-500));
+  color: white;
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
+}
+
+.ais-btn-warning {
+  background: linear-gradient(to right, var(--color-warning-600), var(--color-warning-500));
+  color: white;
+  box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3);
+}
+
+.ais-btn-danger {
+  background: linear-gradient(to right, var(--color-danger-600), var(--color-danger-500));
+  color: white;
+  box-shadow: 0 4px 6px rgba(239, 68, 68, 0.3);
+}
+
+/* БЕЙДЖИ СТАТУСОВ */
+.ais-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.ais-badge-success {
+  background-color: var(--color-success-100);
+  color: var(--color-success-800);
+  border: 1px solid var(--color-success-300);
+}
+
+.ais-badge-warning {
+  background-color: var(--color-warning-100);
+  color: var(--color-warning-800);
+  border: 1px solid var(--color-warning-300);
+}
+
+.ais-badge-danger {
+  background-color: var(--color-danger-100);
+  color: var(--color-danger-800);
+  border: 1px solid var(--color-danger-300);
+}
+
+.ais-badge-info {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-800);
+  border: 1px solid var(--color-primary-300);
+}
+
+/* СТАТИСТИЧЕСКИЕ КАРТОЧКИ */
+.ais-stat-card {
+  background: linear-gradient(135deg, var(--color-primary-700), var(--color-primary-500));
+  color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ais-stat-card-warning {
+  background: linear-gradient(135deg, var(--color-warning-700), var(--color-warning-500));
+}
+
+.ais-stat-card-success {
+  background: linear-gradient(135deg, var(--color-success-700), var(--color-success-500));
+}
+
+.ais-stat-card-danger {
+  background: linear-gradient(135deg, var(--color-danger-700), var(--color-danger-500));
+}
+
+/* ТАБЛИЦЫ */
+.ais-table-container {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 2px solid var(--color-primary-200);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ais-table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+}
+
+.ais-table thead {
+  background: linear-gradient(to right, var(--color-primary-800), var(--color-primary-600));
+  color: white;
+}
+
+.ais-table th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ais-table tbody tr {
+  border-bottom: 1px solid var(--color-gray-200);
+  transition: background 0.2s;
+}
+
+.ais-table tbody tr:hover {
+  background-color: var(--color-primary-50);
+}
+
+.ais-table td {
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  color: var(--color-gray-700);
+}
+
+/* ФОРМЫ */
+.ais-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.ais-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--color-gray-700);
+  font-size: 0.875rem;
+}
+
+.ais-form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--color-primary-300);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: var(--color-gray-800);
+  transition: all 0.2s;
+}
+
+.ais-form-input:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* СЕТКА */
+.ais-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.ais-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.ais-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* УТИЛИТЫ */
+.ais-text-primary { color: var(--color-primary-700); }
+.ais-text-success { color: var(--color-success-600); }
+.ais-text-warning { color: var(--color-warning-600); }
+.ais-text-danger { color: var(--color-danger-600); }
+
+.ais-bg-primary { background-color: var(--color-primary-50); }
+.ais-bg-success { background-color: var(--color-success-50); }
+.ais-bg-warning { background-color: var(--color-warning-50); }
+
+.ais-shadow { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+.ais-shadow-lg { box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); }
+
+.ais-rounded { border-radius: 0.5rem; }
+.ais-rounded-lg { border-radius: 0.75rem; }
+.ais-rounded-xl { border-radius: 1rem; }
