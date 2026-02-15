@@ -1,4 +1,10 @@
 *.log
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.db
+*.db-journal
 .DS_Store
 .env
 .env.backup
@@ -19,6 +25,9 @@
 /storage/*.key
 /storage/pail
 /vendor
+/database/*.sqlite
+/database/*.sqlite-journal
+!/database/.gitignore
 Homestead.json
 Homestead.yaml
 Thumbs.db
